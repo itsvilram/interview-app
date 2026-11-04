@@ -27,6 +27,13 @@ Errors come back as `{ "error": "message" }` with 400, 404 or 500.
 
 ## Deploy on AWS EC2
 
+**Quick way (scripts):**
+1. On your laptop, run `npm run push`. It creates the GitHub repo, pushes, and prints an EC2 command.
+2. Launch the instance (step 1 below), open EC2 Instance Connect, and paste the printed command. It asks for your Supabase URL and key once.
+3. To redeploy after changes, run `npm run push` again, then paste the same command on EC2.
+
+**Manual way:**
+
 1. **EC2 → Launch instance**
    - AMI: **Amazon Linux 2023**. Type: **t3.micro** (or whichever type says "Free tier eligible").
    - Key pair: *Proceed without a key pair* (we connect in the browser).
